@@ -33,17 +33,6 @@
     @apply bg-white text-slate-900 antialiased;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
-
-  /* RTL Font Support for Arabic */
-  html[dir="rtl"],
-  html[dir="rtl"] body {
-    font-family: var(--font-cairo), system-ui, -apple-system, sans-serif;
-  }
-
-  html[dir="ltr"],
-  html[dir="ltr"] body {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  }
   
   /* Prevent horizontal scroll on mobile only */
   @media (max-width: 767px) {
@@ -104,15 +93,6 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
 }
 

@@ -111,7 +111,7 @@ export function CTA() {
             className="grid gap-4 sm:gap-6 md:grid-cols-2"
           >
             <motion.a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@legendmediasa.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@leafsols.com"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02, y: -4 }}
@@ -124,14 +124,14 @@ export function CTA() {
                 </div>
                 <div className="text-left">
                   <div className="mb-0.5 text-xs font-medium text-slate-500 sm:mb-1 sm:text-sm">Email</div>
-                  <div className="text-base font-semibold text-slate-900 sm:text-lg">info@legendmediasa.com</div>
+                  <div className="text-base font-semibold text-slate-900 sm:text-lg">info@leafsols.com</div>
                   <div className="mt-0.5 text-xs text-green-600 sm:mt-1 sm:text-sm">Response within 24 hours</div>
                 </div>
               </div>
             </motion.a>
 
             <motion.a
-              href="tel:+966545169303"
+              href="tel:+12147959956"
               whileHover={{ scale: 1.02, y: -4 }}
               className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-lg transition-shadow hover:shadow-xl sm:rounded-2xl sm:p-8"
             >
@@ -142,8 +142,8 @@ export function CTA() {
                 </div>
                 <div className="text-left">
                   <div className="mb-0.5 text-xs font-medium text-slate-500 sm:mb-1 sm:text-sm">Phone</div>
-                  <div className="text-base font-semibold text-slate-900 sm:text-lg">+966 54 516 9303</div>
-                  <div className="mt-0.5 text-xs text-emerald-600 sm:mt-1 sm:text-sm">Mon-Fri 9AM-6PM GST</div>
+                  <div className="text-base font-semibold text-slate-900 sm:text-lg">+1 (214) 795-9956</div>
+                  <div className="mt-0.5 text-xs text-emerald-600 sm:mt-1 sm:text-sm">Mon-Fri 9AM-6PM EST</div>
                 </div>
               </div>
             </motion.a>

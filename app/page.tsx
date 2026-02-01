@@ -1,5 +1,3 @@
-'use client';
-
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
 import { AboutEnhanced } from '@/components/sections/AboutEnhanced';
@@ -14,13 +12,13 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Legend Media',
+    name: 'Leaf Solutions',
     description:
       'Award-winning web and mobile app development agency specializing in scalable digital solutions',
-    url: 'https://legendmedia.com',
-    logo: 'https://legendmedia.com/logo/legend-logo.png',
-    image: 'https://legendmedia.com/og-image.jpg',
-    email: 'info@legendmedia.com',
+    url: 'https://leaf.solutions',
+    logo: 'https://leaf.solutions/logo/leaf-logo.png',
+    image: 'https://leaf.solutions/og-image.jpg',
+    email: 'info@leafsols.com',
     telephone: '+1-214-795-9956',
     address: {
       '@type': 'PostalAddress',
@@ -28,9 +26,9 @@ export default function Home() {
     },
     sameAs: [
       // Add your social media links here
-      // 'https://twitter.com/legendmedia',
-      // 'https://linkedin.com/company/legendmedia',
-      // 'https://github.com/legendmedia',
+      // 'https://twitter.com/leafsolutions',
+      // 'https://linkedin.com/company/leafsolutions',
+      // 'https://github.com/leafsolutions',
     ],
     areaServed: 'Worldwide',
     serviceType: [

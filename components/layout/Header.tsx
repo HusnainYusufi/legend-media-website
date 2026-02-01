@@ -6,7 +6,6 @@ import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BookingModal } from '@/components/ui/BookingModal';
-import { LanguageToggle } from '@/components/ui/LanguageToggle';
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,13 +13,12 @@ export function Header() {
 
   return (
     <>
-      {/* Floating Burger Menu + Language Toggle */}
+      {/* Floating Burger Menu - Minimal */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="fixed right-6 top-6 z-50 flex items-center gap-3 md:right-8 md:top-8"
+        className="fixed right-6 top-6 z-50 md:right-8 md:top-8"
       >
-        <LanguageToggle />
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="group relative h-14 w-14 rounded-full bg-slate-900/80 backdrop-blur-xl transition-all hover:bg-slate-900 hover:shadow-2xl md:h-16 md:w-16"
@@ -96,15 +94,15 @@ export function Header() {
                       transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                     >
                       <Image
-                        src="/logo/leaf.jpg"
-                        alt="Legend Media"
+                        src="/logo/leaf.png"
+                        alt="Leaf Solutions"
                         width={40}
                         height={40}
                         className="h-8 w-8 sm:h-10 sm:w-10"
                       />
                     </motion.div>
                     <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
-                      Legend<span className="text-green-500">.</span>Media
+                      Leaf<span className="text-green-500">.</span>Solutions
                     </h2>
                   </div>
                   <p className="mt-2 text-xs text-slate-400 sm:text-sm">Think • Analyze • Create</p>
@@ -114,11 +112,11 @@ export function Header() {
                 <nav className="mb-12 sm:mb-16">
                   <ul className="space-y-4 sm:space-y-6">
                     {[
-                      { href: '/', label: 'Home', number: '01' },
-                      { href: '/#about', label: 'About', number: '02' },
-                      { href: '/projects', label: 'Portfolio', number: '03' },
-                      { href: '/#testimonials', label: 'Reviews', number: '04' },
-                      { href: '/#contact', label: 'Contact', number: '05' },
+                      { href: '#home', label: 'Home', number: '01' },
+                      { href: '#about', label: 'About', number: '02' },
+                      { href: '#projects', label: 'Projects', number: '03' },
+                      { href: '#testimonials', label: 'Reviews', number: '04' },
+                      { href: '#contact', label: 'Contact', number: '05' },
                     ].map((item, index) => (
                       <motion.li
                         key={item.href}
@@ -189,10 +187,10 @@ export function Header() {
                       Email
                     </p>
                     <a
-                      href="mailto:info@legendmediasa.com"
+                      href="mailto:info@leafsols.com"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      info@legendmediasa.com
+                      info@leafsols.com
                     </a>
                     <p className="mt-1 text-xs text-slate-400 sm:text-sm">Response within 24 hours</p>
                   </div>
@@ -201,12 +199,12 @@ export function Header() {
                       Phone
                     </p>
                     <a
-                      href="tel:+966545169303"
+                      href="tel:+12147959956"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      +966 54 516 9303
+                      +1 (214) 795-9956
                     </a>
-                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM GST</p>
+                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM EST</p>
                   </div>
                 </motion.div>
 

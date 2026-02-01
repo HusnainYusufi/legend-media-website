@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Legend Media - Web & App Development Agency',
-    short_name: 'Legend Media',
+    name: 'Leaf Solutions - Web & App Development Agency',
+    short_name: 'Leaf Solutions',
     description:
       'Award-winning web and mobile app development agency specializing in scalable digital solutions',
     start_url: '/',
@@ -12,17 +12,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#10B981',
     icons: [
       {
-        src: '/favicon.ico',
+        src: '/logo/leaf.png',
         sizes: 'any',
-        type: 'image/x-icon',
+        type: 'image/png',
       },
       {
-        src: '/icon-192.png',
+        src: '/logo/leaf.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/icon-512.png',
+        src: '/logo/leaf.png',
         sizes: '512x512',
         type: 'image/png',
       },

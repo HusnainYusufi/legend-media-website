@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const words = ['Think', 'Analyze', 'Create'];
 
@@ -65,6 +66,21 @@ export function Hero() {
         <div className="mx-auto max-w-6xl">
           {/* Main Content */}
           <div className="mb-12 sm:mb-16">
+            {/* Logo Mark */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 sm:mb-12"
+            >
+              <Image
+                src="/logo/leaf-logo.png"
+                alt="Leaf Solutions"
+                width={200}
+                height={80}
+                className="h-auto w-40 sm:w-48 md:w-64"
+              />
+            </motion.div>
+
             {/* Company Name - Mobile optimized */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -79,7 +95,7 @@ export function Hero() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="inline-block"
                 >
-                  Legend
+                  Leaf
                 </motion.span>
                 <motion.span
                   initial={{ scale: 0 }}
@@ -95,7 +111,7 @@ export function Hero() {
                   transition={{ delay: 0.5, duration: 0.6 }}
                   className="inline-block font-medium text-slate-700"
                 >
-                  Media
+                  Solutions
                 </motion.span>
               </h1>
             </motion.div>
