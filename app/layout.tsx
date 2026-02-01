@@ -16,13 +16,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leaf.solutions'),
+  metadataBase: new URL('https://legendmediasa.com'),
   title: {
-    default: 'Leaf Solutions | App Development Agency',
-    template: '%s | Leaf Solutions',
+    default: 'Legend Media | App Development Agency',
+    template: '%s | Legend Media',
   },
   description:
-    'Transform your ideas into reality with Leaf Solutions. Expert web and mobile app development, custom software solutions, and digital innovation. 500+ projects delivered, 98% client satisfaction.',
+    'Transform your ideas into reality with Legend Media. Expert web and mobile app development, custom software solutions, and digital innovation. 500+ projects delivered, 98% client satisfaction.',
   keywords: [
     'web development agency',
     'mobile app development',
@@ -36,10 +36,12 @@ export const metadata: Metadata = {
     'UI/UX design',
     'full-stack development',
     'software consultancy',
+    'Saudi Arabia',
+    'Legend Media',
   ],
-  authors: [{ name: 'Leaf Solutions', url: 'https://leaf.solutions' }],
-  creator: 'Leaf Solutions',
-  publisher: 'Leaf Solutions',
+  authors: [{ name: 'Legend Media', url: 'https://legendmediasa.com' }],
+  creator: 'Legend Media',
+  publisher: 'Legend Media',
   formatDetection: {
     email: false,
     address: false,
@@ -48,27 +50,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://leaf.solutions',
-    siteName: 'Leaf Solutions',
-    title: 'Leaf Solutions | Award-Winning Web & App Development Agency',
+    url: 'https://legendmediasa.com',
+    siteName: 'Legend Media',
+    title: 'Legend Media | Award-Winning Web & App Development Agency',
     description:
-      'Transform your ideas into reality with Leaf Solutions. Expert web and mobile app development, custom software solutions, and digital innovation.',
+      'Transform your ideas into reality with Legend Media. Expert web and mobile app development, custom software solutions, and digital innovation.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Leaf Solutions - Award-Winning Development Agency',
+        alt: 'Legend Media - Award-Winning Development Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leaf Solutions | Award-Winning Web & App Development Agency',
+    title: 'Legend Media | Award-Winning Web & App Development Agency',
     description:
-      'Transform your ideas into reality with Leaf Solutions. Expert web and mobile app development, custom software solutions, and digital innovation.',
+      'Transform your ideas into reality with Legend Media. Expert web and mobile app development, custom software solutions, and digital innovation.',
     images: ['/og-image.jpg'],
-    creator: '@leafsolutions',
+    creator: '@legendmediasa',
   },
   robots: {
     index: true,
@@ -82,7 +84,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://leaf.solutions',
+    canonical: 'https://legendmediasa.com',
   },
   icons: {
     icon: '/logo/leaf.png',

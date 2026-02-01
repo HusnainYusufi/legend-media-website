@@ -74,7 +74,7 @@ export function Hero() {
             >
               <Image
                 src="/logo/leaf-logo.png"
-                alt="Leaf Solutions"
+                alt="Legend Media"
                 width={200}
                 height={80}
                 className="h-auto w-40 sm:w-48 md:w-64"
@@ -95,7 +95,7 @@ export function Hero() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="inline-block"
                 >
-                  Leaf
+                  Legend
                 </motion.span>
                 <motion.span
                   initial={{ scale: 0 }}
@@ -111,7 +111,7 @@ export function Hero() {
                   transition={{ delay: 0.5, duration: 0.6 }}
                   className="inline-block font-medium text-slate-700"
                 >
-                  Solutions
+                  Media
                 </motion.span>
               </h1>
             </motion.div>

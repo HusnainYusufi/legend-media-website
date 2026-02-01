@@ -13,12 +13,12 @@ export function Footer() {
             <div className="mb-4 flex items-center gap-3">
               <Image
                 src="/logo/leaf.png"
-                alt="Leaf Solutions"
+                alt="Legend Media"
                 width={32}
                 height={32}
                 className="h-7 w-7 sm:h-8 sm:w-8"
               />
-              <span className="text-base font-medium text-white sm:text-lg">Leaf.Solutions</span>
+              <span className="text-base font-medium text-white sm:text-lg">Legend.Media</span>
             </div>
             <p className="max-w-md text-sm font-light leading-relaxed text-slate-500 sm:text-base">
               Building digital solutions that transform ideas into reality. We specialize in
@@ -75,17 +75,17 @@ export function Footer() {
               <ul className="space-y-2 text-sm font-light">
                 <li>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@leafsols.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@legendmediasa.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="break-all transition-colors hover:text-white"
                   >
-                    info@leafsols.com
+                    info@legendmediasa.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+12147959956" className="transition-colors hover:text-white">
-                    +1 (214) 795-9956
+                  <a href="tel:+966545169303" className="transition-colors hover:text-white">
+                    +966 54 516 9303
                   </a>
                 </li>
               </ul>
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-slate-800 pt-6 text-center text-xs font-light sm:mt-12 sm:pt-8 sm:text-sm">
-          <p>© 2025 Leaf Solutions. All rights reserved.</p>
+          <p>© 2025 Legend Media. All rights reserved.</p>
         </div>
       </div>
     </footer>

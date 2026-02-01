@@ -150,10 +150,10 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   };
 
   const handleBooking = () => {
-    const baseUrl = process.env.NEXT_PUBLIC_CALENDERLY_URL || 'https://calendly.com/leafsolutions';
-    
+    const baseUrl = process.env.NEXT_PUBLIC_CALENDERLY_URL || 'https://calendly.com/legendmediasa';
+
     const params = new URLSearchParams({
-      utm_source: 'leaf-solutions',
+      utm_source: 'legend-media',
       utm_campaign: 'website-booking',
     });
 

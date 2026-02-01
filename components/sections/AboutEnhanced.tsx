@@ -107,7 +107,7 @@ export function AboutEnhanced() {
               style={{ y: useTransform(y, (value) => value * 0.3) }}
               className="mx-auto max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl"
             >
-              At Leaf Solutions, we specialize in building scalable web and app solutions tailored to
+              At Legend Media, we specialize in building scalable web and app solutions tailored to
               your business goals. Our expert team helps you bring ideas to life with innovative,
               reliable, and future-ready technology.
             </motion.p>

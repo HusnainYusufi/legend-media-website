@@ -2,7 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
 import { AboutEnhanced } from '@/components/sections/AboutEnhanced';
 import { StatsHorizontal } from '@/components/sections/StatsHorizontal';
-import { ProjectsShowcase } from '@/components/sections/ProjectsShowcase';
+import { ProjectsCarousel } from '@/components/sections/ProjectsCarousel';
 import { TestimonialsOption2 } from '@/components/sections/TestimonialsOption2';
 import { CTA } from '@/components/sections/CTA';
 import { Footer } from '@/components/layout/Footer';
@@ -12,23 +12,23 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Leaf Solutions',
+    name: 'Legend Media',
     description:
       'Award-winning web and mobile app development agency specializing in scalable digital solutions',
-    url: 'https://leaf.solutions',
-    logo: 'https://leaf.solutions/logo/leaf-logo.png',
-    image: 'https://leaf.solutions/og-image.jpg',
-    email: 'info@leafsols.com',
-    telephone: '+1-214-795-9956',
+    url: 'https://legendmediasa.com',
+    logo: 'https://legendmediasa.com/logo/leaf-logo.png',
+    image: 'https://legendmediasa.com/og-image.jpg',
+    email: 'info@legendmediasa.com',
+    telephone: '+966-54-516-9303',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'US',
+      addressCountry: 'SA',
     },
     sameAs: [
       // Add your social media links here
-      // 'https://twitter.com/leafsolutions',
-      // 'https://linkedin.com/company/leafsolutions',
-      // 'https://github.com/leafsolutions',
+      // 'https://twitter.com/legendmediasa',
+      // 'https://linkedin.com/company/legendmediasa',
+      // 'https://github.com/legendmediasa',
     ],
     areaServed: 'Worldwide',
     serviceType: [
@@ -61,7 +61,7 @@ export default function Home() {
         <Hero />
         <AboutEnhanced />
         <StatsHorizontal />
-        <ProjectsShowcase />
+        <ProjectsCarousel />
         <TestimonialsOption2 />
         <CTA />
       </main>

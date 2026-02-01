@@ -95,14 +95,14 @@ export function Header() {
                     >
                       <Image
                         src="/logo/leaf.png"
-                        alt="Leaf Solutions"
+                        alt="Legend Media"
                         width={40}
                         height={40}
                         className="h-8 w-8 sm:h-10 sm:w-10"
                       />
                     </motion.div>
                     <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
-                      Leaf<span className="text-green-500">.</span>Solutions
+                      Legend<span className="text-green-500">.</span>Media
                     </h2>
                   </div>
                   <p className="mt-2 text-xs text-slate-400 sm:text-sm">Think • Analyze • Create</p>
@@ -187,10 +187,10 @@ export function Header() {
                       Email
                     </p>
                     <a
-                      href="mailto:info@leafsols.com"
+                      href="mailto:info@legendmediasa.com"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      info@leafsols.com
+                      info@legendmediasa.com
                     </a>
                     <p className="mt-1 text-xs text-slate-400 sm:text-sm">Response within 24 hours</p>
                   </div>
@@ -199,12 +199,12 @@ export function Header() {
                       Phone
                     </p>
                     <a
-                      href="tel:+12147959956"
+                      href="tel:+966545169303"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      +1 (214) 795-9956
+                      +966 54 516 9303
                     </a>
-                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM EST</p>
+                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM AST</p>
                   </div>
                 </motion.div>
 

@@ -9,8 +9,8 @@ export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
-  const whatsappNumber = '+12147959956';
-  const defaultMessage = "Hi! I'd like to discuss my project with Leaf Solutions.";
+  const whatsappNumber = '+966545169303';
+  const defaultMessage = "Hi! I'd like to discuss my project with Legend Media.";
 
   const handleSendMessage = () => {
     const textToSend = message.trim() || defaultMessage;
@@ -56,13 +56,13 @@ export function WhatsAppWidget() {
                 <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border-2 border-white">
                   <Image
                     src="/logo/leaf.png"
-                    alt="Leaf Solutions"
+                    alt="Legend Media"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-white">Leaf Solutions</h3>
+                  <h3 className="font-semibold text-white">Legend Media</h3>
                   <p className="text-xs text-green-50">Typically replies instantly</p>
                 </div>
                 <motion.button
@@ -87,7 +87,7 @@ export function WhatsAppWidget() {
                   className="mb-4 rounded-2xl rounded-tl-sm bg-white p-4 shadow-sm"
                 >
                   <p className="mb-2 text-sm text-slate-700">
-                    👋 Hi there! Welcome to <span className="font-semibold">Leaf Solutions</span>
+                    👋 Hi there! Welcome to <span className="font-semibold">Legend Media</span>
                   </p>
                   <p className="text-sm text-slate-600">
                     How can we help you today? Choose a quick option or type your own message:
@@ -198,4 +198,3 @@ export function WhatsAppWidget() {
     </>
   );
 }
-
