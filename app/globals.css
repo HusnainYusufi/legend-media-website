@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-primary: #10B981; /* Leaf Green */
+  --color-secondary: #064E3B; /* Dark Green */
+  --color-accent: #34D399; /* Light Green */
+  --color-neutral-dark: #0F172A; /* Slate 900 */
+  --color-neutral: #64748B; /* Slate 500 */
+  --color-neutral-light: #F8FAFC; /* Slate 50 */
+  
+  /* Spacing */
+  --spacing-section-desktop: 6rem; /* 96px */
+  --spacing-section-mobile: 4rem; /* 64px */
+  
+  /* Typography */
+  --font-sans: var(--font-inter);
+  
+  /* Backgrounds */
+  --background: #ffffff;
+  --foreground: #0F172A;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html,
+  body {
+    @apply bg-white text-slate-900 antialiased;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  /* RTL Font Support for Arabic */
+  html[dir="rtl"],
+  html[dir="rtl"] body {
+    font-family: var(--font-cairo), system-ui, -apple-system, sans-serif;
+  }
+
+  html[dir="ltr"],
+  html[dir="ltr"] body {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Prevent horizontal scroll on mobile only */
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-slate-900;
+  }
+  
+  h1 {
+    @apply text-5xl;
+  }
+  
+  h2 {
+    @apply text-4xl;
+  }
+  
+  h3 {
+    @apply text-3xl;
+  }
+  
+  h4 {
+    @apply text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed text-slate-600;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Hide default cursor only on desktop */
+@media (min-width: 768px) {
+  * {
+    cursor: none;
+  }
+}

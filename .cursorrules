@@ -1,0 +1,565 @@
+# Leaf Solutions - Cursor AI Rules
+
+## Project Overview
+Award-winning marketing website for Leaf Solutions, a digital agency specializing in scalable web and app development. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
+
+## Core Principles
+- Create award-winning, Awwwards-quality designs
+- Prioritize accessibility (WCAG AA) and performance (60fps, Lighthouse 95+)
+- Use simple, clear English in all communication
+- Follow mobile-first responsive design
+- Keep code modular, typed, and maintainable
+
+---
+
+## Technology Stack
+
+### Required
+- **Framework**: Next.js 14+ (App Router only)
+- **Language**: TypeScript (strict mode, no `any`)
+- **Styling**: Tailwind CSS 3+
+- **Animations**: Framer Motion + Lenis (smooth scrolling)
+- **Icons**: Lucide React (exclusively)
+- **Images**: Next.js Image component (always)
+
+### Forbidden
+- ❌ Other UI libraries (MUI, Chakra, Bootstrap)
+- ❌ Other animation libraries except Framer Motion (no GSAP, Anime.js)
+- ❌ Other icon libraries (no Font Awesome, React Icons)
+- ❌ CSS-in-JS libraries (no styled-components, emotion)
+- ❌ State management libraries (no Redux, Zustand) — not needed
+- ❌ Backend code or API routes — this is a static site
+
+---
+
+## Brand Guidelines
+
+### Colors (Use Only These)
+```
+Primary:       #10B981  (Leaf Green)       → bg-green-600, text-green-600
+Secondary:     #064E3B  (Dark Green)       → bg-green-900, text-green-900
+Accent:        #34D399  (Light Green)      → bg-green-400, text-green-400
+Neutral Dark:  #0F172A  (Slate 900)        → bg-slate-900, text-slate-900
+Neutral:       #64748B  (Slate 500)        → text-slate-500
+Neutral Light: #F8FAFC  (Slate 50)         → bg-slate-50
+White:         #FFFFFF  (Pure White)       → bg-white, text-white
+```
+
+### Typography
+- **Font**: Inter (weights: 400, 500, 600, 700)
+- **Hero**: text-6xl (64px) / font-bold / tracking-tight
+- **H1**: text-5xl (48px) / font-bold / tracking-tight
+- **H2**: text-4xl (36px) / font-bold / tracking-tight
+- **H3**: text-3xl (30px) / font-semibold
+- **Body**: text-base (16px) / font-normal / leading-relaxed
+- **Mobile**: Scale down by ~40% (hero: text-4xl, h1: text-3xl, etc.)
+
+### Spacing
+- Use 4px scale: `space-y-4`, `gap-6`, `p-8`, `mb-12`, `py-24`
+- Section padding: `py-24` (desktop), `py-16` (mobile)
+- Container: `max-w-7xl mx-auto px-4`
+
+---
+
+## Component Standards
+
+### File Naming
+- Components: `PascalCase.tsx` (Button.tsx, ProjectCard.tsx)
+- Utils: `camelCase.ts` (animations.ts, cn.ts)
+- Data: `camelCase.ts` (projects.ts, testimonials.ts)
+- Types: `camelCase.types.ts` (project.types.ts)
+
+### Component Template
+```typescript
+'use client';
+
+import { type ComponentPropsWithoutRef } from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils/cn';
+
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+}
+
+export function Button({
+  variant = 'primary',
+  size = 'md',
+  className,
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className={cn(
+        'rounded-md font-semibold transition-colors',
+        {
+          'bg-green-600 text-white hover:bg-green-700': variant === 'primary',
+          'bg-slate-100 text-slate-900 hover:bg-slate-200': variant === 'secondary',
+          'border-2 border-green-600 text-green-600 hover:bg-green-50': variant === 'outline',
+        },
+        {
+          'px-4 py-2 text-sm': size === 'sm',
+          'px-6 py-3 text-base': size === 'md',
+          'px-8 py-4 text-lg': size === 'lg',
+        },
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </motion.button>
+  );
+}
+```
+
+### Props Guidelines
+- Keep props minimal (< 8 props)
+- Use discriminated unions for variants
+- Extend native HTML props when possible
+- Clear event names: `onProjectClick`, `onSubmit`, `onClose`
+
+---
+
+## Styling with Tailwind
+
+### Class Organization
+```typescript
+className={cn(
+  // Layout
+  'flex flex-col items-center justify-center',
+  // Spacing
+  'px-6 py-4 gap-4',
+  // Appearance
+  'rounded-lg bg-white shadow-md',
+  // Typography
+  'text-base font-medium text-slate-900',
+  // Transitions
+  'transition-all duration-300',
+  // Interactive states
+  'hover:shadow-lg hover:-translate-y-1',
+  // Responsive
+  'md:flex-row md:px-8',
+  // Custom classes
+  className
+)}
+```
+
+### Responsive Design
+- Mobile-first: `className="text-sm md:text-base lg:text-lg"`
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px), 2xl (1536px)
+
+---
+
+## Animations with Framer Motion
+
+### Performance Rules
+- ✅ Only animate `transform` and `opacity` (GPU-accelerated)
+- ❌ Never animate `width`, `height`, `left`, `top`, `margin`, `padding`
+
+### Common Patterns
+
+**Fade In Up:**
+```typescript
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' }
+  }
+};
+
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: '-100px' }}
+  variants={fadeInUp}
+>
+  {content}
+</motion.div>
+```
+
+**Stagger Children:**
+```typescript
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+<motion.div variants={staggerContainer}>
+  {items.map(item => (
+    <motion.div key={item.id} variants={fadeInUp}>
+      {item.content}
+    </motion.div>
+  ))}
+</motion.div>
+```
+
+**Hover Effects:**
+```typescript
+<motion.div
+  whileHover={{ scale: 1.05, y: -8 }}
+  whileTap={{ scale: 0.98 }}
+  transition={{ duration: 0.3 }}
+>
+  {content}
+</motion.div>
+```
+
+### Reduced Motion
+Always respect user preferences:
+```typescript
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const variants = prefersReducedMotion
+  ? { hidden: {}, visible: {} }
+  : { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
+```
+
+---
+
+## TypeScript Standards
+
+### Strict Mode
+- No `any` types — use `unknown` and narrow
+- Type all props, functions, and returns
+- Use `interface` for objects, `type` for unions
+
+### Examples
+
+**Good:**
+```typescript
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  images: string[];
+}
+
+function getProject(id: string): Project | undefined {
+  return projects.find(p => p.id === id);
+}
+```
+
+**Bad:**
+```typescript
+function getProject(id: any): any {
+  return projects.find(p => p.id === id);
+}
+```
+
+---
+
+## Accessibility (WCAG AA)
+
+### Required
+- ✅ Color contrast 4.5:1 for text, 3:1 for large text
+- ✅ All interactive elements keyboard accessible
+- ✅ Visible focus indicators (ring-2 ring-green-500)
+- ✅ ARIA labels for icon-only buttons
+- ✅ Semantic HTML (nav, main, footer, article, section)
+- ✅ Alt text for all meaningful images
+
+### Examples
+```typescript
+// Icon-only button
+<button aria-label="Open mobile menu">
+  <Menu className="w-6 h-6" aria-hidden="true" />
+</button>
+
+// Focus state
+<button className="focus:outline-none focus:ring-2 focus:ring-green-500">
+  Click me
+</button>
+
+// Semantic HTML
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+```
+
+---
+
+## Images
+
+### Always Use Next.js Image
+```typescript
+import Image from 'next/image';
+
+// With dimensions
+<Image
+  src="/projects/sticha-1.jpg"
+  alt="Sticha App dashboard showing tailor profiles"
+  width={800}
+  height={600}
+  className="rounded-lg"
+/>
+
+// Responsive (fill parent)
+<div className="relative aspect-video">
+  <Image
+    src="/projects/ganna-1.jpg"
+    alt="Ganna Healing app home screen"
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    className="object-cover rounded-lg"
+  />
+</div>
+```
+
+---
+
+## Icons (Lucide React)
+
+### Usage
+```typescript
+import { Menu, X, ArrowRight, ExternalLink } from 'lucide-react';
+
+// Standard size (24px)
+<ArrowRight className="w-6 h-6" />
+
+// Small (16px)
+<ExternalLink className="w-4 h-4" />
+
+// Large (32px)
+<Menu className="w-8 h-8" />
+
+// With color
+<Check className="w-5 h-5 text-green-600" />
+
+// Decorative (hide from screen readers)
+<ArrowRight className="w-5 h-5" aria-hidden="true" />
+```
+
+---
+
+## Data Architecture
+
+### Static Content
+- Define all content in `lib/data/` files
+- Type with interfaces in `lib/types/`
+- Import directly into components
+
+```typescript
+// lib/types/project.types.ts
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  images: string[];
+  platforms: ('web' | 'android' | 'ios')[];
+}
+
+// lib/data/projects.ts
+import { type Project } from '@/lib/types/project.types';
+
+export const projects: Project[] = [
+  {
+    id: 'sticha',
+    title: 'Sticha App',
+    description: 'A full-featured marketplace...',
+    technologies: ['React', 'Node.js', 'PostgreSQL'],
+    images: ['/projects/sticha-1.jpg', '/projects/sticha-2.jpg'],
+    platforms: ['web', 'android', 'ios'],
+  },
+];
+
+// Component usage
+import { projects } from '@/lib/data/projects';
+
+export function Projects() {
+  return (
+    <div>
+      {projects.map(project => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+## Folder Structure
+
+```
+leaf_solutions_new/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── ui/              # Button, Card, Badge, AnimatedCounter
+│   ├── layout/          # Header, Footer, MobileMenu
+│   ├── sections/        # Hero, About, Projects, Testimonials, CTA
+│   └── providers/       # SmoothScroll
+├── lib/
+│   ├── data/            # projects.ts, testimonials.ts, stats.ts
+│   ├── types/           # project.types.ts, testimonial.types.ts
+│   ├── utils/           # animations.ts, cn.ts, scroll.ts
+│   └── constants/       # theme.ts, routes.ts
+├── public/
+│   ├── logo/
+│   └── projects/
+└── @docs/               # Documentation
+```
+
+---
+
+## Code Quality Checklist
+
+Before considering code complete:
+
+- [ ] TypeScript strict mode, no `any` types
+- [ ] All imports sorted and unused removed
+- [ ] Tailwind classes organized and readable
+- [ ] Animations use transform/opacity only
+- [ ] Accessibility: keyboard, focus, ARIA, semantic HTML
+- [ ] Responsive: mobile, tablet, desktop tested
+- [ ] Images use Next.js Image component
+- [ ] Icons from Lucide React only
+- [ ] No console.log in production code
+- [ ] Respects prefers-reduced-motion
+- [ ] Performance: 60fps animations, fast load
+- [ ] No linting errors or warnings
+
+---
+
+## Common Mistakes to Avoid
+
+### ❌ Don't
+```typescript
+// Using any
+const data: any = fetchData();
+
+// Raw img tag
+<img src="/logo.png" alt="Logo" />
+
+// Animating non-GPU properties
+animate={{ width: '100%', height: '200px' }}
+
+// Custom colors outside brand
+<div className="bg-blue-500">
+
+// Other icon libraries
+import { FaHome } from 'react-icons/fa';
+
+// Inline styles (except dynamic values)
+<div style={{ padding: '20px' }}>
+```
+
+### ✅ Do
+```typescript
+// Proper typing
+const data: Project[] = fetchData();
+
+// Next.js Image
+<Image src="/logo.png" alt="Logo" width={200} height={100} />
+
+// GPU-accelerated animations
+animate={{ transform: 'scale(1.05)', opacity: 1 }}
+
+// Brand colors
+<div className="bg-green-600">
+
+// Lucide icons
+import { Home } from 'lucide-react';
+
+// Tailwind classes
+<div className="p-5">
+```
+
+---
+
+## Section Component Template
+
+```typescript
+'use client';
+
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations';
+
+export function SectionName() {
+  return (
+    <section className="py-24 px-4 bg-slate-50">
+      <div className="container mx-auto max-w-7xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={staggerContainer}
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl font-bold text-slate-900 mb-12 text-center"
+          >
+            Section Title
+          </motion.h2>
+
+          <motion.p
+            variants={fadeInUp}
+            className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-16"
+          >
+            Section description goes here.
+          </motion.p>
+
+          {/* Content grid/cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Cards go here */}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+```
+
+---
+
+## Questions to Ask Before Generating Code
+
+1. Does this use brand colors only?
+2. Is TypeScript strict with no `any`?
+3. Is this accessible (keyboard, ARIA, focus)?
+4. Are animations GPU-accelerated?
+5. Does this use Next.js Image?
+6. Are icons from Lucide React?
+7. Is this mobile responsive?
+8. Is the code clean and maintainable?
+
+---
+
+## Resources
+
+- **Docs**: See `@docs/` folder for comprehensive guidelines
+- **Next.js**: https://nextjs.org/docs
+- **Tailwind**: https://tailwindcss.com/docs
+- **Framer Motion**: https://www.framer.com/motion/
+- **Lucide**: https://lucide.dev/
+- **WCAG**: https://www.w3.org/WAI/WCAG21/quickref/
+
+---
+
+## Summary
+
+**Remember:**
+- Use simple English
+- Follow brand guidelines strictly
+- Prioritize accessibility and performance
+- Keep code modular and typed
+- Test on real devices
+- Create award-winning experiences
+
+**When in doubt, refer to `@docs/` for detailed guidelines.**
+

@@ -1,0 +1,16 @@
+# Robots.txt for Leaf Solutions
+# https://leaf.solutions
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private sections (if any in the future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://leaf.solutions/sitemap.xml
+
+# Crawl-delay (optional, if needed)
+# Crawl-delay: 10
+
