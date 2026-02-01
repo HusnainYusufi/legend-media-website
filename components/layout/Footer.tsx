@@ -88,13 +88,38 @@ export function Footer() {
                     +966 54 516 9303
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://maps.app.goo.gl/by2mEnpuHjxmfpsS9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-white"
+                  >
+                    Abu Al Noor Tower, An Nawwariyyah, Makkah
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-800 pt-6 text-center text-xs font-light sm:mt-12 sm:pt-8 sm:text-sm">
-          <p>© 2025 Legend Media. All rights reserved.</p>
+        {/* Google Map */}
+        <div className="mt-8 overflow-hidden rounded-xl border border-slate-800 sm:mt-12">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90223.15217702699!2d39.81974293822039!3d21.486849437129976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21d0039429209%3A0x321aa822cb5c53d0!2z2KjYsdisINin2KjZiCDYp9mE2YbZiNixINiq2KfZiNix!5e0!3m2!1sen!2ssa!4v1769978809847!5m2!1sen!2ssa"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Legend Media Office Location"
+            className="grayscale transition-all duration-300 hover:grayscale-0"
+          />
+        </div>
+
+        <div className="mt-8 border-t border-slate-800 pt-6 text-center text-xs font-light sm:pt-8 sm:text-sm">
+          <p>© 2026 Legend Media. All rights reserved.</p>
         </div>
       </div>
     </footer>
