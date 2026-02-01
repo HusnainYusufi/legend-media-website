@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <Image
-                src="/logo/leaf.png"
+                src="/logo/leaf.jpg"
                 alt="Legend Media"
                 width={32}
                 height={32}
@@ -75,17 +75,17 @@ export function Footer() {
               <ul className="space-y-2 text-sm font-light">
                 <li>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@legendmedia.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@legendmediasa.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="break-all transition-colors hover:text-white"
                   >
-                    info@legendmedia.com
+                    info@legendmediasa.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+12147959956" className="transition-colors hover:text-white">
-                    +1 (214) 795-9956
+                  <a href="tel:+966545169303" className="transition-colors hover:text-white">
+                    +966 54 516 9303
                   </a>
                 </li>
               </ul>

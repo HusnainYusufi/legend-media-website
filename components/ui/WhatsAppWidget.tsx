@@ -9,7 +9,7 @@ export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
-  const whatsappNumber = '+12147959956';
+  const whatsappNumber = '+966545169303';
   const defaultMessage = "Hi! I'd like to discuss my project with Legend Media.";
 
   const handleSendMessage = () => {
@@ -55,7 +55,7 @@ export function WhatsAppWidget() {
               <div className="flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-500 p-4">
                 <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border-2 border-white">
                   <Image
-                    src="/logo/leaf.png"
+                    src="/logo/leaf.jpg"
                     alt="Legend Media"
                     fill
                     className="object-cover"

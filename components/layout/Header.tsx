@@ -96,7 +96,7 @@ export function Header() {
                       transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                     >
                       <Image
-                        src="/logo/leaf.png"
+                        src="/logo/leaf.jpg"
                         alt="Legend Media"
                         width={40}
                         height={40}
@@ -189,10 +189,10 @@ export function Header() {
                       Email
                     </p>
                     <a
-                      href="mailto:info@legendmedia.com"
+                      href="mailto:info@legendmediasa.com"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      info@legendmedia.com
+                      info@legendmediasa.com
                     </a>
                     <p className="mt-1 text-xs text-slate-400 sm:text-sm">Response within 24 hours</p>
                   </div>
@@ -201,12 +201,12 @@ export function Header() {
                       Phone
                     </p>
                     <a
-                      href="tel:+12147959956"
+                      href="tel:+966545169303"
                       className="text-base text-white transition-colors hover:text-green-400 sm:text-lg"
                     >
-                      +1 (214) 795-9956
+                      +966 54 516 9303
                     </a>
-                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM EST</p>
+                    <p className="mt-1 text-xs text-slate-400 sm:text-sm">Mon-Fri 9AM-6PM GST</p>
                   </div>
                 </motion.div>
 
