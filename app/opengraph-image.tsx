@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Leaf Solutions - Web & App Development Agency';
+export const alt = 'Legend Media - Web & App Development Agency';
 export const size = {
   width: 1200,
   height: 630,
@@ -75,7 +75,7 @@ export default async function Image() {
               textAlign: 'center',
             }}
           >
-            Leaf<span style={{ color: '#10B981' }}>.</span>Solutions
+            Legend<span style={{ color: '#10B981' }}>.</span>Media
           </h1>
 
           {/* Tagline */}

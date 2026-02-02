@@ -56,7 +56,7 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
               >
                 <Image
                   src="/logo/leaf-logo.png"
-                  alt="Leaf Solutions"
+                  alt="Legend Media"
                   width={256}
                   height={102}
                   className="h-auto w-full object-contain"

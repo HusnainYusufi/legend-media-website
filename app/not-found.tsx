@@ -19,7 +19,7 @@ export default function NotFound() {
             <div className="relative h-auto w-32">
               <Image
                 src="/logo/leaf-logo.png"
-                alt="Leaf Solutions"
+                alt="Legend Media"
                 width={150}
                 height={60}
                 className="h-auto w-full object-contain"

@@ -34,7 +34,7 @@ export default function LegalPage() {
             <span className="font-medium">Back to Home</span>
           </Link>
           <h1 className="text-xl font-bold text-slate-900">
-            Leaf<span className="text-green-600">.</span>Solutions
+            Legend<span className="text-green-600">.</span>Media
           </h1>
         </div>
       </header>
@@ -72,7 +72,7 @@ export default function LegalPage() {
 
           <div className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
             <p className="text-lg leading-relaxed text-slate-700">
-              At Leaf Solutions, we respect and protect your privacy. Here's how we handle your
+              At Legend Media, we respect and protect your privacy. Here's how we handle your
               information.
             </p>
 
@@ -238,7 +238,7 @@ export default function LegalPage() {
               <div>
                 <h3 className="mb-2 text-xl font-semibold text-slate-900">Liability</h3>
                 <p className="leading-relaxed text-slate-600">
-                  Leaf Solutions is not responsible for indirect losses, downtime, or third-party
+                  Legend Media is not responsible for indirect losses, downtime, or third-party
                   service disruptions.
                 </p>
               </div>
