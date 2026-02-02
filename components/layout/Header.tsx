@@ -92,13 +92,15 @@ export function Header() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                      className="relative h-8 w-8 flex-shrink-0 sm:h-10 sm:w-10"
                     >
                       <Image
                         src="/logo/leaf.png"
                         alt="Legend Media"
                         width={40}
                         height={40}
-                        className="h-8 w-8 sm:h-10 sm:w-10"
+                        className="h-full w-full object-contain"
+                        style={{ objectFit: 'contain' }}
                       />
                     </motion.div>
                     <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">

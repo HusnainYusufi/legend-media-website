@@ -16,13 +16,16 @@ export default function NotFound() {
         >
           {/* Logo */}
           <div className="mb-8 flex justify-center">
-            <Image
-              src="/logo/leaf-logo.png"
-              alt="Leaf Solutions"
-              width={150}
-              height={60}
-              className="h-auto w-32"
-            />
+            <div className="relative h-auto w-32">
+              <Image
+                src="/logo/leaf-logo.png"
+                alt="Leaf Solutions"
+                width={150}
+                height={60}
+                className="h-auto w-full object-contain"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </div>
 
           {/* 404 */}

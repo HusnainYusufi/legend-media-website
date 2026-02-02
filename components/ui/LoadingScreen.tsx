@@ -52,13 +52,15 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
+                className="relative h-auto w-56 md:w-64"
               >
                 <Image
                   src="/logo/leaf-logo.png"
                   alt="Leaf Solutions"
-                  width={240}
-                  height={96}
-                  className="h-auto w-56 md:w-64"
+                  width={256}
+                  height={102}
+                  className="h-auto w-full object-contain"
+                  style={{ objectFit: 'contain' }}
                   priority
                 />
               </motion.div>

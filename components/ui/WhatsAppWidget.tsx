@@ -58,7 +58,8 @@ export function WhatsAppWidget() {
                     src="/logo/leaf.png"
                     alt="Legend Media"
                     fill
-                    className="object-cover"
+                    className="object-contain"
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
                 <div className="flex-1">

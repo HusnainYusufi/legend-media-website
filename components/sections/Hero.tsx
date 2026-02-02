@@ -72,13 +72,17 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-8 sm:mb-12"
             >
-              <Image
-                src="/logo/leaf-logo.png"
-                alt="Legend Media"
-                width={200}
-                height={80}
-                className="h-auto w-40 sm:w-48 md:w-64"
-              />
+              <div className="relative h-auto w-40 sm:w-48 md:w-64">
+                <Image
+                  src="/logo/leaf-logo.png"
+                  alt="Legend Media"
+                  width={256}
+                  height={102}
+                  className="h-auto w-full object-contain"
+                  style={{ objectFit: 'contain' }}
+                  priority
+                />
+              </div>
             </motion.div>
 
             {/* Company Name - Mobile optimized */}

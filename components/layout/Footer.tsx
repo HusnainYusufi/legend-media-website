@@ -11,13 +11,16 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <Image
-                src="/logo/leaf.png"
-                alt="Legend Media"
-                width={32}
-                height={32}
-                className="h-7 w-7 sm:h-8 sm:w-8"
-              />
+              <div className="relative h-7 w-7 flex-shrink-0 sm:h-8 sm:w-8">
+                <Image
+                  src="/logo/leaf.png"
+                  alt="Legend Media"
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-contain"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
               <span className="text-base font-medium text-white sm:text-lg">Legend.Media</span>
             </div>
             <p className="max-w-md text-sm font-light leading-relaxed text-slate-500 sm:text-base">
@@ -27,10 +30,10 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div className="grid grid-cols-2 gap-6 sm:flex sm:flex-col sm:gap-8 md:flex-row md:justify-end">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8 md:flex md:flex-row md:justify-end md:gap-12">
             <div>
               <h3 className="mb-3 text-sm font-medium text-white sm:mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm font-light">
+              <ul className="space-y-2 text-xs sm:text-sm font-light">
                 <li>
                   <a href="#about" className="transition-colors hover:text-white">
                     About
@@ -56,7 +59,7 @@ export function Footer() {
 
             <div>
               <h3 className="mb-3 text-sm font-medium text-white sm:mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm font-light">
+              <ul className="space-y-2 text-xs sm:text-sm font-light">
                 <li>
                   <Link href="/legal#privacy-policy" className="transition-colors hover:text-white">
                     Privacy Policy
@@ -72,13 +75,13 @@ export function Footer() {
 
             <div className="col-span-2 sm:col-span-1">
               <h3 className="mb-3 text-sm font-medium text-white sm:mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm font-light">
+              <ul className="space-y-2 text-xs sm:text-sm font-light">
                 <li>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=info@legendmediasa.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="break-all transition-colors hover:text-white"
+                    className="break-words transition-colors hover:text-white"
                   >
                     info@legendmediasa.com
                   </a>
@@ -88,12 +91,12 @@ export function Footer() {
                     +966 54 516 9303
                   </a>
                 </li>
-                <li>
+                <li className="pr-2">
                   <a
                     href="https://maps.app.goo.gl/by2mEnpuHjxmfpsS9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-white"
+                    className="inline-block transition-colors hover:text-white"
                   >
                     Abu Al Noor Tower, An Nawwariyyah, Makkah
                   </a>
@@ -114,7 +117,7 @@ export function Footer() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Legend Media Office Location"
-            className="grayscale transition-all duration-300 hover:grayscale-0"
+            className="h-48 w-full sm:h-64 md:h-80 grayscale transition-all duration-300 hover:grayscale-0"
           />
         </div>
 
